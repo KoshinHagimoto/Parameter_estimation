@@ -62,6 +62,11 @@ def gL_estimation(V, m, h, n, I_inj, dt=0.05, g_Na=120.0, g_K=36.0, E_Na=50.0, E
     return gL # g_L = 0.3
 
 def estimate_parameter(V_train):
+    """
+    粒子フィルタとパラメータ推定を繰り返し用いて, 逐次的にgLの推定を行う
+    :param V_train:
+    :return: gLs:list (gLの推移を記録した動的配列)
+    """
     gLs = []
     gL_initial = 0.40
     gLs.append(gL_initial)
